@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var selectedTab: TabItem = TabItem.tabs.first!
+
     var body: some View {
-        HomeScreen()
+        NavigationView {
+            ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+                HomeScreen()
+                TabBar(selectedTab: $selectedTab)
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
+        }
     }
 }
 

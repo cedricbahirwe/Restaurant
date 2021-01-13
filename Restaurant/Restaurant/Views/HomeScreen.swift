@@ -44,79 +44,143 @@ struct HomeScreen: View {
         Food(name: "Hot Burger", image: "burger"),
     ]
     var body: some View {
-        VStack {
-            VStack(spacing: 15)  {
-                // Searching Menu
-                HStack {
-                    Image(systemName: "location.circle")
-                        .frame(width: 40, height: 40)
-                        .rotationEffect(.radians(.pi))
+        ScrollView(showsIndicators: false) {
+            VStack {
+                VStack(spacing: 15)  {
+                    // Searching Menu
+                    HStack {
+                        Image(systemName: "location.circle")
+                            .frame(width: 40, height: 40)
+                            .rotationEffect(.radians(.pi))
+                            .background(Color.white)
+                            .cornerRadius(5)
+                            .shadow(color: Color.offWhite, radius: 4)
+                        HStack(spacing: 5) {
+                            TextField("Search for meals or area", text: .constant(""))
+                                .padding(.leading, 10)
+                                .font(.poppins(.Regular))
+                            Image(systemName: "magnifyingglass")
+                                .frame(width: 40, height: 40)
+                            
+                        }
+                        
+                        .frame(height: 40)
                         .background(Color.white)
                         .cornerRadius(5)
                         .shadow(color: Color.offWhite, radius: 4)
-                    HStack(spacing: 5) {
-                        TextField("Search for meals or area", text: .constant(""))
-                            .padding(.leading, 10)
-                            .font(.poppins(.Regular))
-                        Image(systemName: "magnifyingglass")
-                            .frame(width: 40, height: 40)
-                        
-                    }
+                    }.padding(.horizontal)
                     
-                    .frame(height: 40)
-                    .background(Color.white)
-                    .cornerRadius(5)
-                    .shadow(color: Color.offWhite, radius: 4)
+                    // Top Categories
+                    VStack(spacing: 10) {
+                        HStack {
+                            Text("Top Categories")
+                                .font(.poppins(.SemiBold, size: 16))
+                            Spacer()
+                            
+                            Button(action: {}, label: {
+                                Image("filter")
+                                    .resizable()
+                                    .renderingMode(.template)
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 16, height: 14)
+                                Text("Filter")
+                                    .font(.poppins(.Regular, size: 14))
+                            })
+                            .foregroundColor(.mainGray)
+                        }
+                        .padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(foods) { food in
+                                    VStack (spacing: 5){
+                                        Image(food.image)
+                                            .resizable()
+                                            .frame(width: 100, height: 70)
+                                            .background(Color.white)
+                                            .cornerRadius(5)
+                                        Text(food.name)
+                                            .font(.poppins(.SemiBold, size: 14))
+                                            .lineLimit(1)
+                                            .foregroundColor(.black)
+                                    }
+                                    .frame(width: 100)
+                                }
+                            }
+                        }.padding(.leading)
+                    }
                 }
                 
-                // Top Categories
-                VStack(spacing: 10) {
-                    HStack {
-                        Text("Top Categories")
-                            .font(.poppins(.SemiBold, size: 16))
-                        Spacer()
-                        
-                        Button(action: {}, label: {
-                            Image("filter")
-                                .resizable()
-                                .renderingMode(.template)
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 16, height: 14)
-                            Text("Filter")
-                                .font(.poppins(.Regular, size: 14))
-                        })
-                        .foregroundColor(.mainGray)
-                        
-                    }
-                    
-                    ScrollView(.horizontal, showsIndicators: false) {
+                
+                // Popular Items
+                VStack {
+                    Divider()
+                    VStack(spacing: 10) {
                         HStack {
-                            ForEach(foods) { food in
-                                VStack (spacing: 5){
-                                    Image(food.image)
-                                        .resizable()
-                                        .frame(width: 100, height: 70)
-                                        .background(Color.white)
-                                        .cornerRadius(5)
-                                    Text(food.name)
-                                        .font(.poppins(.SemiBold, size: 14))
-                                        .lineLimit(1)
-                                        .foregroundColor(.black)
+                            Text("Popular Items")
+                                .font(.poppins(.SemiBold, size: 16))
+                            Spacer()
+                            
+                            Button(action: {}, label: {
+                                Text("View all")
+                                    .font(.poppins(.SemiBold, size: 12))
+                            })
+                            .foregroundColor(.mainGray)
+                            
+                        }.padding(.horizontal)
+                        
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                ForEach(foods) { food in
+                                    HStack(alignment: .top){
+                                        Image(food.image)
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                            .background(Color.white)
+                                            .cornerRadius(5)
+                                        VStack(alignment: .leading, spacing: 5){
+                                            VStack(alignment: .leading,spacing: 0) {
+                                                Text(food.name)
+                                                    .font(.poppins(.Medium, size: 16))
+                                                    .lineLimit(1)
+                                                    .minimumScaleFactor(0.8)
+                                                
+                                                Text("By " + "Pili Pili")
+                                                    .font(.poppins(.Medium, size: 12))
+                                                    .foregroundColor(.mainGray)
+                                                    .lineLimit(2)
+                                            }
+                                            
+                                            Divider()
+                                                .frame(width: 50)
+                                            HStack {
+                                                Text("€ " + "15.20")
+                                                    .font(.poppins(.SemiBold, size: 14))
+                                                    .foregroundColor(.mainGray)
+                                                Text("€ " + "14.20")
+                                                    .font(.poppins(.SemiBold, size: 16))
+                                                    .foregroundColor(.black)
+                                            }
+                                        }
+                                    }
+                                    
+                                    .frame(width: 280, height: 85, alignment: .leading)
+                                    .padding(8)
+                                    .background(Color.white)
+                                    .cornerRadius(8)
+                                    .shadow(color: .offWhite, radius: 04)
                                 }
-                                .frame(width: 100)
                             }
-                        }
+                        }.padding(.leading)
                     }
+                    Divider().padding(.top, 8)
                 }
-            }.padding([.horizontal, .top])
-            
-            
-            // Popular Items
-            VStack {
-                Divider()
+                
+                
+                // NearBy Deals
                 VStack(spacing: 10) {
                     HStack {
-                        Text("Popular Items")
+                        Text("Nearby Deals")
                             .font(.poppins(.SemiBold, size: 16))
                         Spacer()
                         
@@ -127,130 +191,70 @@ struct HomeScreen: View {
                         .foregroundColor(.mainGray)
                         
                     }
-                    
+                    .padding(.horizontal)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(foods) { food in
-                                HStack(alignment: .top){
+                                VStack(alignment: .leading){
                                     Image(food.image)
                                         .resizable()
-                                        .frame(width: 80, height: 80)
+                                        .frame(width: 200, height: 120)
                                         .background(Color.white)
                                         .cornerRadius(5)
+                                        .overlay(
+                                            Text("10% OFF")
+                                                .foregroundColor(.white)
+                                                .font(.poppins(.Regular, size: 12))
+                                                .padding(.horizontal, 4)
+                                                .padding(.vertical, 2)
+                                                .background(Color.mainColor)
+                                                .cornerRadius(3)
+                                                .padding(3)
+                                            , alignment: .topTrailing
+                                            )
                                     VStack(alignment: .leading, spacing: 5){
-                                        VStack(alignment: .leading,spacing: 0) {
+                                        VStack(alignment: .leading, spacing: 0) {
                                             Text(food.name)
-                                                .font(.poppins(.Medium, size: 16))
+                                                .font(.poppins(.Medium, size: 18))
                                                 .lineLimit(1)
                                                 .minimumScaleFactor(0.8)
                                             
-                                            Text("By " + "Pili Pili")
-                                                .font(.poppins(.Medium, size: 12))
+                                            Text("Mexican Creamy nachos")
+                                                .font(.poppins(.Regular, size: 13))
                                                 .foregroundColor(.mainGray)
                                                 .lineLimit(2)
                                         }
-                                        
-                                        Divider()
-                                            .frame(width: 50)
                                         HStack {
                                             Text("€ " + "15.20")
-                                                .font(.poppins(.SemiBold, size: 14))
+                                                .font(.poppins(.SemiBold, size: 15))
                                                 .foregroundColor(.mainGray)
                                             Text("€ " + "14.20")
-                                                .font(.poppins(.SemiBold, size: 16))
+                                                .font(.poppins(.SemiBold, size: 17))
                                                 .foregroundColor(.black)
                                         }
                                     }
+                                    Spacer(minLength: 5)
                                 }
                                 
-                                .frame(width: 280, height: 85, alignment: .leading)
+                                .frame(height: 210, alignment: .leading)
                                 .padding(8)
                                 .background(Color.white)
                                 .cornerRadius(8)
-                                .shadow(color: .offWhite, radius: 04)
+                                .shadow(color: .offWhite, radius: 0.5)
                             }
                         }
                     }
-                }.padding(.horizontal)
-                Divider().padding(.top, 8)
-            }
-            
-            
-            // NearBy Deals
-            VStack(spacing: 10) {
-                HStack {
-                    Text("Nearby Deals")
-                        .font(.poppins(.SemiBold, size: 16))
-                    Spacer()
-                    
-                    Button(action: {}, label: {
-                        Text("View all")
-                            .font(.poppins(.SemiBold, size: 12))
-                    })
-                    .foregroundColor(.mainGray)
-                    
+                    .padding(.leading)
                 }
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(foods) { food in
-                            VStack(alignment: .leading){
-                                Image(food.image)
-                                    .resizable()
-                                    .frame(width: 200, height: 120)
-                                    .background(Color.white)
-                                    .cornerRadius(5)
-                                    .overlay(
-                                        Text("10% OFF")
-                                            .foregroundColor(.white)
-                                            .font(.poppins(.Regular, size: 12))
-                                            .padding(.horizontal, 4)
-                                            .padding(.vertical, 2)
-                                            .background(Color.mainColor)
-                                            .cornerRadius(3)
-                                            .padding(3)
-                                        , alignment: .topTrailing
-                                        )
-                                VStack(alignment: .leading, spacing: 5){
-                                    VStack(alignment: .leading, spacing: 0) {
-                                        Text(food.name)
-                                            .font(.poppins(.Medium, size: 18))
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.8)
-                                        
-                                        Text("Mexican Creamy nachos")
-                                            .font(.poppins(.Regular, size: 13))
-                                            .foregroundColor(.mainGray)
-                                            .lineLimit(2)
-                                    }
-                                    HStack {
-                                        Text("€ " + "15.20")
-                                            .font(.poppins(.SemiBold, size: 15))
-                                            .foregroundColor(.mainGray)
-                                        Text("€ " + "14.20")
-                                            .font(.poppins(.SemiBold, size: 17))
-                                            .foregroundColor(.black)
-                                    }
-                                }
-                                Spacer(minLength: 5)
-                            }
-                            
-                            .frame(height: 210, alignment: .leading)
-                            .padding(8)
-                            .background(Color.white)
-                            .cornerRadius(8)
-                            .shadow(color: .offWhite, radius: 0.5)
-                        }
-                    }
-                }
-            }.padding(.horizontal)
-            
-            
-            
-            
-            Spacer()
-            
+                
+                
+                
+                Spacer()
+                
+            }
         }
+        .padding(.bottom, 80)
         .whiteBackground()
         .colorScheme(.light)
 
