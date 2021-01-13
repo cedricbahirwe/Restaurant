@@ -25,7 +25,7 @@ struct SignIn: View {
                 
                 Text("Sign In")
                     .font(.poppins(.SemiBold, size: 20))
-                VStack(spacing: 20) {
+                VStack(alignment: .trailing, spacing: 20) {
                     VStack(alignment: .leading, spacing: 5) {
                         HStack(spacing: 5) {
                             Text("Email Address")
@@ -94,12 +94,12 @@ struct SignIn: View {
 
                     }
                     
-//                    Button(action: {}, label: {
-//                        Text("Sign Up")
-//                            .foregroundColor(.mainColor)
-//                            .font(.poppins(.Bold, size: 16))
-//                            
-//                    })
+                    Button(action: {}, label: {
+                        Text("Forgot Password?")
+                            .foregroundColor(.black)
+                            .font(.poppins(.Bold, size: 16))
+                            
+                    })
                     
                 }
                 
@@ -108,8 +108,8 @@ struct SignIn: View {
                     }) {
                         Text("Sign In")
                             .frame(maxWidth: .infinity)
-                            .padding()
-                            .font(.system(size: 18, weight: .bold, design: .rounded))
+                            .padding(14)
+                            .font(.poppins(.SemiBold, size: 20))
                             .foregroundColor(Color.white)
                             .background(Color.mainColor)
                             .cornerRadius(5)
@@ -141,9 +141,12 @@ struct SignIn: View {
                         Button(action: {
                         }) {
                             HStack {
-                                Image("Facebook")
+                                Image("facebook")
+                                    .renderingMode(.template)
                                     .resizable()
-                                    .frame(width: 22, height: 23)
+                                    .frame(width: 24, height: 25)
+                                    .foregroundColor(.white)
+
                                 Text("Facebook")
                                     .font(.system(size: 18, weight: .bold, design: .rounded))
                                     .foregroundColor(Color.white)
@@ -151,7 +154,6 @@ struct SignIn: View {
                             .padding()
                             .frame(maxWidth: .infinity)
                             .background(Color.blue)
-//                            .overlay(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.blue, lineWidth: 1 ))
                             .cornerRadius(5)
                             
                         }
