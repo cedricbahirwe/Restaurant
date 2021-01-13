@@ -41,6 +41,7 @@
 		8288596925AF49090000BADB /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288596825AF49090000BADB /* CustomColors.swift */; };
 		82FC984525AF7C770065CC1C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC984425AF7C770065CC1C /* TabBar.swift */; };
 		82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC985625AF92CD0065CC1C /* Helpers.swift */; };
+		82FC986225AF98DF0065CC1C /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC986125AF98DF0065CC1C /* OffersView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		8288596825AF49090000BADB /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		82FC984425AF7C770065CC1C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		82FC985625AF92CD0065CC1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		82FC986125AF98DF0065CC1C /* OffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				8288592A25AF479B0000BADB /* SignIn.swift */,
 				826994F225AF4CAD00D8104B /* HomeScreen.swift */,
+				82FC986125AF98DF0065CC1C /* OffersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				8288593025AF47B40000BADB /* SplashScreen.swift in Sources */,
 				828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */,
 				8288596925AF49090000BADB /* CustomColors.swift in Sources */,
+				82FC986225AF98DF0065CC1C /* OffersView.swift in Sources */,
 				8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */,
 				82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */,
 				826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */,

@@ -14,7 +14,7 @@ struct TabItem: Identifiable {
     
     static let tabs = [
         TabItem(id: 0, image: "explore", title: "Explore"),
-        TabItem(id: 1, image: "food", title: "Food"),
+        TabItem(id: 1, image: "food", title: "Offers"),
         TabItem(id: 2, image: "cart", title: "Orders"),
         TabItem(id: 3, image: "profile", title: "Profile")
     ]

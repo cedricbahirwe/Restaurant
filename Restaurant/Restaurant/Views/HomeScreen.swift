@@ -10,15 +10,15 @@ import SwiftUI
 
 struct Food: Identifiable {
     var id = UUID()
-    var image: String = ""
-    var name: String = ""
-    var subtitle: String = ""
-    var description: String? = ""
-    var area: String = ""
-    var stars: Double = 0.0
-    var price: Double = 0.0
+    var image: String
+    var name: String
+    var subtitle: String
+    var description: String?
+    var area: String
+    var stars: Double
+    var price: Double
     
-    init(name: String = "", image: String = "", subtitle: String = "",description: String? = "",area: String = "",stars: Double = 0.0,price: Double = 0.0) {
+    init(name: String = "", image: String = "", subtitle: String = "",description: String? = "",area: String = "",stars: Double = 4.1,price: Double = 14.20) {
         //        self.id = UUID()
         self.image = image
         self.name = name
@@ -28,10 +28,7 @@ struct Food: Identifiable {
         self.stars = stars
         self.price = price
     }
-    
-}
-struct HomeScreen: View {
-    @State var foods = [
+    static let foods = [
         Food(name: "Pizza", image: "pizza"),
         Food(name: "Burgers", image: "burgers"),
         Food(name: "Steak", image: "steak"),
@@ -43,6 +40,10 @@ struct HomeScreen: View {
         Food(name: "Duck", image: "chickens"),
         Food(name: "Hot Burger", image: "burger"),
     ]
+    
+}
+struct HomeScreen: View {
+    
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
@@ -92,7 +93,7 @@ struct HomeScreen: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(foods) { food in
+                                ForEach(Food.foods) { food in
                                     VStack (spacing: 5){
                                         Image(food.image)
                                             .resizable()
@@ -131,7 +132,7 @@ struct HomeScreen: View {
                         
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
-                                ForEach(foods) { food in
+                                ForEach(Food.foods) { food in
                                     HStack(alignment: .top){
                                         Image(food.image)
                                             .resizable()
@@ -194,7 +195,7 @@ struct HomeScreen: View {
                     .padding(.horizontal)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(foods) { food in
+                            ForEach(Food.foods) { food in
                                 VStack(alignment: .leading){
                                     Image(food.image)
                                         .resizable()
