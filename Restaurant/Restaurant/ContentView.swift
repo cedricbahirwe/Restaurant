@@ -13,8 +13,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                HomeScreen()
+                if selectedTab.id == 0 {
+                    HomeScreen()
+                }else {
+                    OffersView()
+                }
                 TabBar(selectedTab: $selectedTab)
+                
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
