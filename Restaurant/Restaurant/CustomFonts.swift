@@ -32,7 +32,7 @@ enum PoppinsFontName: String, CaseIterable {
 extension Font {
     // Create a custom font with the given Poppins Font `name` and `size` that scales with
     /// the body text style.
-    static func poppins(_ name: PoppinsFontName, size: CGFloat) -> Font {
+    static func poppins(_ name: PoppinsFontName, size: CGFloat = 16) -> Font {
         return .custom(name.rawValue, size: size)
     }
 }
