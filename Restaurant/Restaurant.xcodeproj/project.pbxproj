@@ -15,6 +15,7 @@
 		828858E925AF46F70000BADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828858E725AF46F70000BADB /* LaunchScreen.storyboard */; };
 		828858F425AF46F70000BADB /* RestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858F325AF46F70000BADB /* RestaurantTests.swift */; };
 		828858FF25AF46F70000BADB /* RestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858FE25AF46F70000BADB /* RestaurantUITests.swift */; };
+		8288591C25AF47460000BADB /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288591B25AF47460000BADB /* CustomColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		828858FA25AF46F70000BADB /* RestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828858FE25AF46F70000BADB /* RestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantUITests.swift; sourceTree = "<group>"; };
 		8288590025AF46F70000BADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8288591B25AF47460000BADB /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				828858E025AF46F60000BADB /* ContentView.swift */,
 				828858E225AF46F70000BADB /* Assets.xcassets */,
 				828858E725AF46F70000BADB /* LaunchScreen.storyboard */,
+				8288591A25AF47460000BADB /* Colors */,
 				828858EA25AF46F70000BADB /* Info.plist */,
 				828858E425AF46F70000BADB /* Preview Content */,
 			);
@@ -134,6 +137,15 @@
 				8288590025AF46F70000BADB /* Info.plist */,
 			);
 			path = RestaurantUITests;
+			sourceTree = "<group>";
+		};
+		8288591A25AF47460000BADB /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8288591B25AF47460000BADB /* CustomColors.swift */,
+			);
+			name = Colors;
+			path = ../../../../Documents/Restaurant/Restaurant/Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +280,7 @@
 			files = (
 				828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */,
 				828858DF25AF46F60000BADB /* SceneDelegate.swift in Sources */,
+				8288591C25AF47460000BADB /* CustomColors.swift in Sources */,
 				828858E125AF46F60000BADB /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
