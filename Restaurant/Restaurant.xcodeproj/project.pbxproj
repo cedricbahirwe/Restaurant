@@ -15,7 +15,6 @@
 		828858E925AF46F70000BADB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828858E725AF46F70000BADB /* LaunchScreen.storyboard */; };
 		828858F425AF46F70000BADB /* RestaurantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858F325AF46F70000BADB /* RestaurantTests.swift */; };
 		828858FF25AF46F70000BADB /* RestaurantUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858FE25AF46F70000BADB /* RestaurantUITests.swift */; };
-		8288591C25AF47460000BADB /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288591B25AF47460000BADB /* CustomColors.swift */; };
 		8288592B25AF479B0000BADB /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288592A25AF479B0000BADB /* SignIn.swift */; };
 		8288593025AF47B40000BADB /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288592F25AF47B40000BADB /* SplashScreen.swift */; };
 		8288594725AF47D10000BADB /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8288593525AF47D10000BADB /* Poppins-ExtraLight.ttf */; };
@@ -37,6 +36,7 @@
 		8288595725AF47D20000BADB /* Poppins-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8288594525AF47D10000BADB /* Poppins-Italic.ttf */; };
 		8288595825AF47D20000BADB /* Poppins-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8288594625AF47D10000BADB /* Poppins-MediumItalic.ttf */; };
 		8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288595C25AF47E60000BADB /* CustomFonts.swift */; };
+		8288596925AF49090000BADB /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288596825AF49090000BADB /* CustomColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,7 +71,6 @@
 		828858FA25AF46F70000BADB /* RestaurantUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RestaurantUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		828858FE25AF46F70000BADB /* RestaurantUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantUITests.swift; sourceTree = "<group>"; };
 		8288590025AF46F70000BADB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8288591B25AF47460000BADB /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		8288592A25AF479B0000BADB /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		8288592F25AF47B40000BADB /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		8288593525AF47D10000BADB /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		8288594525AF47D10000BADB /* Poppins-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Italic.ttf"; sourceTree = "<group>"; };
 		8288594625AF47D10000BADB /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		8288595C25AF47E60000BADB /* CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
+		8288596825AF49090000BADB /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,10 +149,11 @@
 				828858E025AF46F60000BADB /* ContentView.swift */,
 				828858E225AF46F70000BADB /* Assets.xcassets */,
 				8288592F25AF47B40000BADB /* SplashScreen.swift */,
+				82B5C77C25AF49A6005CE987 /* Colors */,
+				8288596425AF48EF0000BADB /* New Group */,
 				8288593425AF47D10000BADB /* Fonts */,
 				8288595C25AF47E60000BADB /* CustomFonts.swift */,
 				828858E725AF46F70000BADB /* LaunchScreen.storyboard */,
-				8288591A25AF47460000BADB /* Colors */,
 				828858EA25AF46F70000BADB /* Info.plist */,
 				828858E425AF46F70000BADB /* Preview Content */,
 			);
@@ -183,15 +184,6 @@
 				8288590025AF46F70000BADB /* Info.plist */,
 			);
 			path = RestaurantUITests;
-			sourceTree = "<group>";
-		};
-		8288591A25AF47460000BADB /* Colors */ = {
-			isa = PBXGroup;
-			children = (
-				8288591B25AF47460000BADB /* CustomColors.swift */,
-			);
-			name = Colors;
-			path = ../../../../Documents/Restaurant/Restaurant/Colors;
 			sourceTree = "<group>";
 		};
 		8288592925AF479B0000BADB /* Views */ = {
@@ -225,6 +217,21 @@
 				8288594625AF47D10000BADB /* Poppins-MediumItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8288596425AF48EF0000BADB /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		82B5C77C25AF49A6005CE987 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				8288596825AF49090000BADB /* CustomColors.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,10 +384,10 @@
 			files = (
 				8288593025AF47B40000BADB /* SplashScreen.swift in Sources */,
 				828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */,
+				8288596925AF49090000BADB /* CustomColors.swift in Sources */,
 				8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */,
 				828858DF25AF46F60000BADB /* SceneDelegate.swift in Sources */,
 				8288592B25AF479B0000BADB /* SignIn.swift in Sources */,
-				8288591C25AF47460000BADB /* CustomColors.swift in Sources */,
 				828858E125AF46F60000BADB /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

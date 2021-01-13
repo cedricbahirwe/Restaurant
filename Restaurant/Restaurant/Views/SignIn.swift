@@ -94,6 +94,13 @@ struct SignIn: View {
 
                     }
                     
+//                    Button(action: {}, label: {
+//                        Text("Sign Up")
+//                            .foregroundColor(.mainColor)
+//                            .font(.poppins(.Bold, size: 16))
+//                            
+//                    })
+                    
                 }
                 
                 VStack(spacing: 10) {

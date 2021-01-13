@@ -6,9 +6,13 @@
 //
 
 import Foundation
+
 import SwiftUI
+
+
 
 extension Color {
     static let mainColor = Color("mainColor")
-    static let mainBgColor = Color("bgColor")
+    static let mainBgColor  = Color("bgColor")
+    
 }
