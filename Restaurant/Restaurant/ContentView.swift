@@ -9,18 +9,28 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTab: TabItem = TabItem.tabs.first!
-
+    @ObservedObject var localAuth = LocalAuthentication()
+    
+    
     var body: some View {
         NavigationView {
-            ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
-                if selectedTab.id == 0 {
-                    HomeScreen()
-                }else {
-                    OffersView()
+            Group {
+                if !localAuth.hasEvaluated {
+                    SignIn()
+                        .onAppear(perform: localAuth.authenticateUser)
+                } else {
+                    ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
+                        if selectedTab.id == 0 {
+                            HomeScreen()
+                        }else {
+                            OffersView()
+                        }
+                        TabBar(selectedTab: $selectedTab)
+                        
+                    }
                 }
-                TabBar(selectedTab: $selectedTab)
-                
             }
+            
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
