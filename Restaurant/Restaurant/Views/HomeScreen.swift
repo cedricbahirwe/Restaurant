@@ -192,61 +192,13 @@ struct HomeScreen: View {
                         
                     }
                     .padding(.horizontal)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            VStack {
+                    
+                    // Nearby Deals
+                    VStack {
+                        ForEach(0..<2) { index in
+                            ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
-                                    ForEach(Food.foods) { food in
-                                            VStack(alignment: .leading){
-                                                Image(food.image)
-                                                    .resizable()
-                                                    .frame(width: 200, height: 120)
-                                                    .background(Color.white)
-                                                    .cornerRadius(5)
-                                                    .overlay(
-                                                        Text("10% OFF")
-                                                            .foregroundColor(.white)
-                                                            .font(.poppins(.Regular, size: 12))
-                                                            .padding(.horizontal, 4)
-                                                            .padding(.vertical, 2)
-                                                            .background(Color.mainColor)
-                                                            .cornerRadius(3)
-                                                            .padding(3)
-                                                        , alignment: .topTrailing
-                                                        )
-                                                VStack(alignment: .leading, spacing: 5){
-                                                    VStack(alignment: .leading, spacing: 0) {
-                                                        Text(food.name)
-                                                            .font(.poppins(.Medium, size: 18))
-                                                            .lineLimit(1)
-                                                            .minimumScaleFactor(0.8)
-                                                        
-                                                        Text("Mexican Creamy nachos")
-                                                            .font(.poppins(.Regular, size: 13))
-                                                            .foregroundColor(.mainGray)
-                                                            .lineLimit(2)
-                                                    }
-                                                    HStack {
-                                                        Text("€ " + "15.20")
-                                                            .font(.poppins(.SemiBold, size: 15))
-                                                            .foregroundColor(.mainGray)
-                                                        Text("€ " + "14.20")
-                                                            .font(.poppins(.SemiBold, size: 17))
-                                                            .foregroundColor(.black)
-                                                    }
-                                                }
-                                                Spacer(minLength: 5)
-                                            }
-                                            
-                                            .frame(height: 210, alignment: .leading)
-                                            .padding(8)
-                                            .background(Color.white)
-                                            .cornerRadius(8)
-                                            .shadow(color: .offWhite, radius: 0.5)
-                                    }
-                                }
-                                HStack {
-                                    ForEach(Food.foods.reversed()) { food in
+                                    ForEach(index == 0 ? Food.foods : Food.foods.reversed()) { food in
                                             VStack(alignment: .leading){
                                                 Image(food.image)
                                                     .resizable()

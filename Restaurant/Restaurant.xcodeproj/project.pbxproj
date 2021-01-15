@@ -40,6 +40,7 @@
 		8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288595C25AF47E60000BADB /* CustomFonts.swift */; };
 		8288596925AF49090000BADB /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288596825AF49090000BADB /* CustomColors.swift */; };
 		82D9F6C725B21E5F0006BED3 /* LocalAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D9F6C625B21E5F0006BED3 /* LocalAuthentication.swift */; };
+		82D9F6D525B23B590006BED3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D9F6D425B23B580006BED3 /* ProfileView.swift */; };
 		82FC984525AF7C770065CC1C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC984425AF7C770065CC1C /* TabBar.swift */; };
 		82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC985625AF92CD0065CC1C /* Helpers.swift */; };
 		82FC986225AF98DF0065CC1C /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC986125AF98DF0065CC1C /* OffersView.swift */; };
@@ -102,6 +103,7 @@
 		8288595C25AF47E60000BADB /* CustomFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomFonts.swift; sourceTree = "<group>"; };
 		8288596825AF49090000BADB /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		82D9F6C625B21E5F0006BED3 /* LocalAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthentication.swift; sourceTree = "<group>"; };
+		82D9F6D425B23B580006BED3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		82FC984425AF7C770065CC1C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		82FC985625AF92CD0065CC1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		82FC986125AF98DF0065CC1C /* OffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				8288592A25AF479B0000BADB /* SignIn.swift */,
 				826994F225AF4CAD00D8104B /* HomeScreen.swift */,
 				82FC986125AF98DF0065CC1C /* OffersView.swift */,
+				82D9F6D425B23B580006BED3 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				8288592B25AF479B0000BADB /* SignIn.swift in Sources */,
 				828858E125AF46F60000BADB /* ContentView.swift in Sources */,
 				82D9F6C725B21E5F0006BED3 /* LocalAuthentication.swift in Sources */,
+				82D9F6D525B23B590006BED3 /* ProfileView.swift in Sources */,
 				82FC984525AF7C770065CC1C /* TabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
