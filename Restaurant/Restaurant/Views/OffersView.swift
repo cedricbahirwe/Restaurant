@@ -112,7 +112,7 @@ struct OffersView: View {
                                             }
                                             HStack {
                                                 Text("€40 -50 mins.")
-                                                Text("·").bold()
+                                                Dot()
                                                 Text("€ " + "30.0 for two")
                                                 
                                             }
@@ -183,7 +183,7 @@ struct OffersView: View {
                                                                 .renderingMode(.original)
                                                             Text("4.1")
                                                         }
-                                                        Text("·").bold()
+                                                        Dot()
                                                         Text("40-50 mins")
 
                                                     }
@@ -269,7 +269,7 @@ struct OffersView: View {
                                                                 .renderingMode(.original)
                                                             Text("4.1")
                                                         }
-                                                        Text("·").bold()
+                                                        Dot()
                                                         Text("40-50 mins")
                                                         
                                                     }
