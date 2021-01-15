@@ -21,3 +21,9 @@ extension View {
         clipShape(RoundedCorner(radius: radius, corners: corners))
     }
 }
+
+struct Dot: View {
+    var body: some View {
+        Text("·").bold().scaleEffect(1.5)
+    }
+}

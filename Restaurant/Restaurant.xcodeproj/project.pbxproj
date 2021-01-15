@@ -41,6 +41,8 @@
 		8288596925AF49090000BADB /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8288596825AF49090000BADB /* CustomColors.swift */; };
 		82D9F6C725B21E5F0006BED3 /* LocalAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D9F6C625B21E5F0006BED3 /* LocalAuthentication.swift */; };
 		82D9F6D525B23B590006BED3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D9F6D425B23B580006BED3 /* ProfileView.swift */; };
+		82D9F6E625B25B860006BED3 /* RestaurantsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D9F6E525B25B860006BED3 /* RestaurantsView.swift */; };
+		82D9F6EB25B25BA00006BED3 /* PromoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D9F6EA25B25BA00006BED3 /* PromoView.swift */; };
 		82FC984525AF7C770065CC1C /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC984425AF7C770065CC1C /* TabBar.swift */; };
 		82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC985625AF92CD0065CC1C /* Helpers.swift */; };
 		82FC986225AF98DF0065CC1C /* OffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82FC986125AF98DF0065CC1C /* OffersView.swift */; };
@@ -104,6 +106,8 @@
 		8288596825AF49090000BADB /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		82D9F6C625B21E5F0006BED3 /* LocalAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAuthentication.swift; sourceTree = "<group>"; };
 		82D9F6D425B23B580006BED3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		82D9F6E525B25B860006BED3 /* RestaurantsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsView.swift; sourceTree = "<group>"; };
+		82D9F6EA25B25BA00006BED3 /* PromoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromoView.swift; sourceTree = "<group>"; };
 		82FC984425AF7C770065CC1C /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		82FC985625AF92CD0065CC1C /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		82FC986125AF98DF0065CC1C /* OffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersView.swift; sourceTree = "<group>"; };
@@ -167,11 +171,11 @@
 			children = (
 				828858DC25AF46F60000BADB /* AppDelegate.swift */,
 				828858DE25AF46F60000BADB /* SceneDelegate.swift */,
+				828858E025AF46F60000BADB /* ContentView.swift */,
 				82FC985525AF92C00065CC1C /* Helpers */,
 				82FC984325AF7C670065CC1C /* CustomViews */,
 				826994F725AF4CC600D8104B /* Extensions */,
 				8288592925AF479B0000BADB /* Views */,
-				828858E025AF46F60000BADB /* ContentView.swift */,
 				828858E225AF46F70000BADB /* Assets.xcassets */,
 				8288592F25AF47B40000BADB /* SplashScreen.swift */,
 				82B5C77C25AF49A6005CE987 /* Colors */,
@@ -258,6 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				82FC984425AF7C770065CC1C /* TabBar.swift */,
+				82D9F6E525B25B860006BED3 /* RestaurantsView.swift */,
+				82D9F6EA25B25BA00006BED3 /* PromoView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -421,11 +427,13 @@
 			files = (
 				8288593025AF47B40000BADB /* SplashScreen.swift in Sources */,
 				828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */,
+				82D9F6EB25B25BA00006BED3 /* PromoView.swift in Sources */,
 				8288596925AF49090000BADB /* CustomColors.swift in Sources */,
 				82FC986225AF98DF0065CC1C /* OffersView.swift in Sources */,
 				8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */,
 				82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */,
 				826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */,
+				82D9F6E625B25B860006BED3 /* RestaurantsView.swift in Sources */,
 				826994F325AF4CAD00D8104B /* HomeScreen.swift in Sources */,
 				828858DF25AF46F60000BADB /* SceneDelegate.swift in Sources */,
 				8288592B25AF479B0000BADB /* SignIn.swift in Sources */,

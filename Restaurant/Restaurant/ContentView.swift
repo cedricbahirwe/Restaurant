@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var selectedTab: TabItem = TabItem.tabs.first!
-    @ObservedObject var localAuth = LocalAuthentication()
+    @EnvironmentObject var localAuth:LocalAuthentication
     
     
     var body: some View {
@@ -17,12 +17,14 @@ struct ContentView: View {
             Group {
                 if !localAuth.hasEvaluated {
                     SignIn()
-                        .onAppear(perform: localAuth.authenticateUser)
+//                        .onAppear(perform: localAuth.authenticateUser)
                 } else {
                     ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
                         if selectedTab.id == 0 {
                             HomeScreen()
-                        }else {
+                        }else if selectedTab.id == 3 {
+                            ProfileView()
+                        } else {
                             OffersView()
                         }
                         TabBar(selectedTab: $selectedTab)

@@ -27,13 +27,14 @@ class LocalAuthentication: ObservableObject {
                 DispatchQueue.main.async {
                     if success {
                         self.hasEvaluated = true
-                        print("Got in")
                     } else {
+                        hasEvaluated = false
                         authError = (true, "Authentication failed")
                     }
                 }
             }
         } else {
+            hasEvaluated = false
             authError = (true, "Your device is not configured for Touch ID.")
         }
     }
