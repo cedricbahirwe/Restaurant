@@ -25,8 +25,8 @@ struct ContentView: View {
                         }else if selectedTab.id == 1 {
                             OffersView()
                         } else if selectedTab.id == 2 {
-//                            CartView()
-                            RestaurantDetails()
+                            CartView()
+//                            RestaurantDetails()
                         } else {
                             ProfileView()
                         }

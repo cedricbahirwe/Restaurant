@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RestaurantDetails: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack {
             Image("header-burger-3")
@@ -17,7 +18,12 @@ struct RestaurantDetails: View {
                 .overlay(LinearGradient(gradient: Gradient(colors: [Color.black.opacity(0.8), Color(.darkGray)]), startPoint: .topLeading, endPoint: .bottomTrailing).opacity(0.25))
                 .overlay(
                     HStack{
-                        Button(action: {}, label: {
+                        Button(action: {
+                            withAnimation {
+                                presentaionMode.wrappedValue.dismiss()
+                                
+                            }
+                        }, label: {
                             Image(systemName: "chevron.left")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
