@@ -43,6 +43,7 @@ struct Food: Identifiable {
     
 }
 struct HomeScreen: View {
+    @State private var goToDetails = false
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -50,6 +51,7 @@ struct HomeScreen: View {
                 VStack(spacing: 15)  {
                     // Searching Menu
                     HStack {
+                        NavigationLink(destination: RestaurantDetails(), isActive: $goToDetails) { }
                         Image(systemName: "location.circle")
                             .frame(width: 40, height: 40)
                             .rotationEffect(.radians(.pi))
@@ -106,6 +108,10 @@ struct HomeScreen: View {
                                             .foregroundColor(.black)
                                     }
                                     .frame(width: 100)
+                                    .contentShape(Rectangle())
+                                    .onTapGesture {
+                                        goToDetails.toggle()
+                                    }
                                 }
                             }
                         }.padding(.leading)
