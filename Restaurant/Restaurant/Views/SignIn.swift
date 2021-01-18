@@ -11,7 +11,6 @@ struct SignIn: View {
     
     @State var isEditingEmail = false
     @State var isEditingPassword = false
-    private let gradient = LinearGradient(gradient: Gradient(colors: [Color(.label), .yellow, .green, .purple, .red, Color(.label)]), startPoint: .leading, endPoint: .trailing)
     
     @State private var enableLoginButton = true
     @State private var validateEmail: Bool = false
