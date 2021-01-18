@@ -124,6 +124,7 @@ struct SignIn: View {
                             HStack {
                                 Image("google")
                                     .resizable()
+                                    .renderingMode(.original)
                                     .frame(width: 22, height: 23)
                                 Text("Google")
                                     .font(.system(size: 18, weight: .bold, design: .rounded))
@@ -179,6 +180,7 @@ struct SignIn: View {
             }
             .padding()
         }
+        
     }
 }
 

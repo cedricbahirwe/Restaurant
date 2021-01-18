@@ -22,15 +22,22 @@ struct ContentView: View {
                     ZStack(alignment: Alignment(horizontal: .center, vertical: .bottom)) {
                         if selectedTab.id == 0 {
                             HomeScreen()
-                        }else if selectedTab.id == 3 {
-                            ProfileView()
-                        } else {
+                        }else if selectedTab.id == 1 {
                             OffersView()
+                        } else if selectedTab.id == 2 {
+                            CartView()
+                        } else {
+                            ProfileView()
                         }
                         TabBar(selectedTab: $selectedTab)
                         
                     }
                 }
+            }
+            .alert(isPresented: $localAuth.authError.error) {
+                Alert(title: Text("Sorry!!!"), message: Text(localAuth.authError.message), dismissButton: .default(Text("Continue"), action: {
+                    localAuth.hasEvaluated.toggle()
+                }))
             }
             
             .navigationBarTitle("")
@@ -41,6 +48,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(LocalAuthentication())
     }
 }

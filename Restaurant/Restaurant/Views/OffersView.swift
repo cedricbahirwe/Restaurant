@@ -51,6 +51,7 @@ struct OffersView: View {
         }
         .padding(.bottom, 80)
         .whiteBackground()
+        .colorScheme(.light)
     }
 }
 

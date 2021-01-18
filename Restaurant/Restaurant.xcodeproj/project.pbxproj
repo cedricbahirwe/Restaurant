@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		82584B0625B6190700064619 /* RestaurantDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82584B0525B6190700064619 /* RestaurantDetails.swift */; };
+		82584B0B25B6194700064619 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82584B0A25B6194700064619 /* CartView.swift */; };
 		826994F325AF4CAD00D8104B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826994F225AF4CAD00D8104B /* HomeScreen.swift */; };
 		826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826994F825AF4CD100D8104B /* ViewExtensions.swift */; };
 		828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858DC25AF46F60000BADB /* AppDelegate.swift */; };
@@ -66,6 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		82584B0525B6190700064619 /* RestaurantDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetails.swift; sourceTree = "<group>"; };
+		82584B0A25B6194700064619 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		826994F225AF4CAD00D8104B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		826994F825AF4CD100D8104B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		828858D925AF46F60000BADB /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,6 +225,8 @@
 				826994F225AF4CAD00D8104B /* HomeScreen.swift */,
 				82FC986125AF98DF0065CC1C /* OffersView.swift */,
 				82D9F6D425B23B580006BED3 /* ProfileView.swift */,
+				82584B0A25B6194700064619 /* CartView.swift */,
+				82584B0525B6190700064619 /* RestaurantDetails.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -425,11 +431,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82584B0B25B6194700064619 /* CartView.swift in Sources */,
 				8288593025AF47B40000BADB /* SplashScreen.swift in Sources */,
 				828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */,
 				82D9F6EB25B25BA00006BED3 /* PromoView.swift in Sources */,
 				8288596925AF49090000BADB /* CustomColors.swift in Sources */,
 				82FC986225AF98DF0065CC1C /* OffersView.swift in Sources */,
+				82584B0625B6190700064619 /* RestaurantDetails.swift in Sources */,
 				8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */,
 				82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */,
 				826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */,
