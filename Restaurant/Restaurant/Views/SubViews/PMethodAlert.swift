@@ -12,14 +12,25 @@ struct PMethodAlert: View {
         ZStack {
             Color.black.opacity(0.4)
                 .edgesIgnoringSafeArea(.all)
-            VStack(spacing: 30) {
-                Image("paypal")
+            VStack(alignment: .leading, spacing: 30) {
+                HStack {
+                    Image("paypal")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 30)
+                    Spacer()
+                    Image(systemName: "plus")
+                        .imageScale(.large)
+                        .font(.poppins(.Bold))
+                        .rotationEffect(.radians(.pi/4))
+                        .offset(x: -5,y: -15)
+                }
+                .padding(.top)
                 VStack(alignment: .leading, spacing: 5) {
                 Text("Process to link Pay Pal wallet with")
                     .foregroundColor(.mainGray)
                     .multilineTextAlignment(.leading)
                     .font(.poppins(.Light))
-                    .padding(.trailing)
                 HStack(spacing: 2) {
                     Text("this number:")
                         .foregroundColor(.mainGray)
@@ -38,18 +49,18 @@ struct PMethodAlert: View {
                         .background(Color.mainColor)
                         .cornerRadius(5)
                 })
+                .frame(maxWidth: .infinity)
                 
             }
             
             .padding(.bottom)
-            .padding(.horizontal, 10)
+            .padding(.horizontal)
             .padding(.vertical)
             .frame(maxWidth: .infinity)
             .background(Color(.systemBackground))
             .cornerRadius(15)
-            .overlay(Image(systemName: "plus").rotationEffect(.radians(.pi/4))
-                        .padding()
-                     , alignment: .topTrailing)
+//            .overlay(
+//                     , alignment: .topTrailing)
             .padding()
         }
     }
