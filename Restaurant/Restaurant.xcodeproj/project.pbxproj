@@ -11,6 +11,7 @@
 		82584B0B25B6194700064619 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82584B0A25B6194700064619 /* CartView.swift */; };
 		826994F325AF4CAD00D8104B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826994F225AF4CAD00D8104B /* HomeScreen.swift */; };
 		826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826994F825AF4CD100D8104B /* ViewExtensions.swift */; };
+		8271330425C89C1200D2AB40 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8271330325C89C1200D2AB40 /* MyOrdersView.swift */; };
 		828858DD25AF46F60000BADB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858DC25AF46F60000BADB /* AppDelegate.swift */; };
 		828858DF25AF46F60000BADB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858DE25AF46F60000BADB /* SceneDelegate.swift */; };
 		828858E125AF46F60000BADB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828858E025AF46F60000BADB /* ContentView.swift */; };
@@ -72,6 +73,7 @@
 		82584B0A25B6194700064619 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		826994F225AF4CAD00D8104B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		826994F825AF4CD100D8104B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		8271330325C89C1200D2AB40 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
 		828858D925AF46F60000BADB /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		828858DC25AF46F60000BADB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		828858DE25AF46F60000BADB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 				826994F825AF4CD100D8104B /* ViewExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		827132FC25C89BE800D2AB40 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				8271330325C89C1200D2AB40 /* MyOrdersView.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		828858D025AF46F60000BADB = {
@@ -227,6 +237,7 @@
 				82D9F6D425B23B580006BED3 /* ProfileView.swift */,
 				82584B0A25B6194700064619 /* CartView.swift */,
 				82584B0525B6190700064619 /* RestaurantDetails.swift */,
+				827132FC25C89BE800D2AB40 /* SubViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -449,6 +460,7 @@
 				82D9F6C725B21E5F0006BED3 /* LocalAuthentication.swift in Sources */,
 				82D9F6D525B23B590006BED3 /* ProfileView.swift in Sources */,
 				82FC984525AF7C770065CC1C /* TabBar.swift in Sources */,
+				8271330425C89C1200D2AB40 /* MyOrdersView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Restaurant/Preview Content\"";
-				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				DEVELOPMENT_TEAM = 9C9R36NYWY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Restaurant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -639,7 +651,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Restaurant/Preview Content\"";
-				DEVELOPMENT_TEAM = 6V9B6LUW22;
+				DEVELOPMENT_TEAM = 9C9R36NYWY;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Restaurant/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

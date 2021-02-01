@@ -220,7 +220,7 @@ struct CartView: View {
             .whiteBackground()
             .colorScheme(.light)
             
-            BottomSheetView()
+            BottomSheetView().hidden()
                 .zIndex(100)
                 .keyboardAdaptive()
                 .offset(x: 0, y: showCard ? 360 : 1000)
