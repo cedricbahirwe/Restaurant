@@ -116,7 +116,7 @@ struct ProfileView: View {
             .padding(10)
             .whiteBackground()
             
-            SheetView(showCard: $showSheet.observeKeyboard, height: 300){
+            SheetView(showCard: $showSheet.observeKeyboard){
                 EditAccountView()
             }
         }

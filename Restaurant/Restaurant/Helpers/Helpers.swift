@@ -24,7 +24,7 @@ struct RoundedCorner: Shape {
 struct SheetView<Content: View> : View {
     
     @Binding var showCard: Bool
-    var height: CGFloat = 360
+    var height: CGFloat = 300
     var content: () -> Content
     @State private var show = false
     @State private var viewState  = CGSize.zero

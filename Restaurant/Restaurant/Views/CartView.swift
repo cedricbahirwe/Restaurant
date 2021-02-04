@@ -190,17 +190,11 @@ struct CartView: View {
                                 .lineLimit(1)
                                 .minimumScaleFactor(0.65)
                                 .foregroundColor(.mainGray)
-                            Button(action: {
-                                showSheet.toggle()
-                            }, label: {
-                                Text("MAKE PAYMENT")
-                                    .frame(height: 35)
-                                    .frame(maxWidth: .infinity)
-                                    .background(Color.mainColor)
-                                    .cornerRadius(5)
-                                    .foregroundColor(.white)
-                                    .font(.poppins(.Medium, size: 12))
-                            })
+                            RedButton(title: "MAKE PAYMENT", 35) {
+                                withAnimation {
+                                    showSheet.toggle()
+                                }
+                            }
                             .padding(.vertical, 8)
                             
                         }
@@ -214,7 +208,7 @@ struct CartView: View {
             .padding(.bottom, 80)
             .whiteBackground()
             .colorScheme(.light)
-            SheetView(showCard: $showSheet) {
+            SheetView(showCard: $showSheet.observeKeyboard, height: 400) {
                 QuickAccountView()
             }
             
@@ -281,7 +275,11 @@ struct QuickAccountView: View {
         .padding(.top)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.white)
+        .background(Color(.systemBackground).onTapGesture {
+            withAnimation {
+                hideKeyboard()
+            }
+        })
         .cornerRadius(20)
         .shadow(radius: 20)
     }
