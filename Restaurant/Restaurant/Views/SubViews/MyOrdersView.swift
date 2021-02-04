@@ -11,23 +11,8 @@ struct MyOrdersView: View {
     var body: some View {
         VStack {
             // Header View
-            HStack(spacing: 30) {
-                Button(action: {}, label: {
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 10, height: 10)
-                        .foregroundColor(.mainGray)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(5)
-                })
-                Text("My Orders's")
-                    .font(.poppins(.SemiBold, size: 20))
-                Spacer()
-            }
-            .frame(maxWidth: .infinity)
-            .padding(.leading)
+            HeaderView(title: "My Orders")
+                .padding(.leading)
             ScrollView(showsIndicators: false) {
                 VStack {
                     ForEach(0..<3, id: \.self) { i in

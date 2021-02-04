@@ -10,24 +10,8 @@ import SwiftUI
 struct AddressesView: View {
     var body: some View {
         VStack {
-            // Header View
-            HStack(spacing: 20) {
-                Button(action: {}, label: {
-                    Image(systemName: "chevron.left")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 10, height: 10)
-                        .foregroundColor(.mainGray)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(5)
-                })
-                Text("Manage Address")
-                    .font(.poppins(.SemiBold, size: 20))
-                Spacer()
-            }
 
-            
+            HeaderView(title: "Manage Address")
             ScrollView(showsIndicators: false) {
                 ForEach(0 ..< 2, id: \.self) { i in
                     VStack(alignment: .leading,spacing: 8) {
