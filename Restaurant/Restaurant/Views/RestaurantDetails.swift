@@ -213,7 +213,7 @@ struct RestaurantDetails: View {
 struct RestaurantDetails_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantDetails()
-//            .environment(\.colorScheme, .dark)
+            .environment(\.colorScheme, .dark)
         
     }
 }

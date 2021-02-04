@@ -9,12 +9,11 @@ import SwiftUI
 
 struct CartView: View {
     
-    @State private var showSheet = true
+    @State private var showSheet = false
     
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                
                 
                 // Header View
                 HStack(spacing: 0) {
