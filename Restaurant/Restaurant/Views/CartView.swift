@@ -278,7 +278,6 @@ struct QuickAccountView: View {
             .padding(.vertical, 8)
             Spacer()
         }
-        .keyboardAdaptive()
         .padding(.top)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)

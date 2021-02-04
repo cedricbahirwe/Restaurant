@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct ProfileOption: Identifiable, Equatable {
 //    static func == (lhs: ProfileOption, rhs: ProfileOption) -> Bool {
 //        lhs.title == rhs.title
@@ -30,7 +29,6 @@ struct ProfileView: View {
     @State private var goToOrders = false
     @State private var goToManageAdress = false
     @State private var goToFavouritess = false
-    
     
     @State private var showSheet = false
     
@@ -118,7 +116,7 @@ struct ProfileView: View {
             .padding(10)
             .whiteBackground()
             
-            SheetView(showCard: $showSheet, height: 300){
+            SheetView(showCard: $showSheet.observeKeyboard, height: 300){
                 EditAccountView()
             }
         }
@@ -132,6 +130,7 @@ struct ProfileView_Previews: PreviewProvider {
 }
 
 struct EditAccountView: View {
+
     var body: some View {
         VStack(alignment: .leading, spacing:5) {
             Text("EDIT ACCOUNT")
@@ -167,7 +166,7 @@ struct EditAccountView: View {
                     .font(.poppins(.Medium, size: 12))
                 TextField("example@gmail.com", text: .constant("loremipsum@gmail.com"))
                     .textContentType(.emailAddress)
-                    .keyboardType(.phonePad)
+                    .keyboardType(.emailAddress)
                     .padding(.leading)
                     .frame(height: 40)
                     .font(.poppins(.Medium, size: 14))
@@ -178,12 +177,15 @@ struct EditAccountView: View {
                 .padding(.vertical, 8)
             Spacer(minLength: 0)
         }
-        .keyboardAdaptive()
+//        .keyboardAdaptive()
         .padding(.top)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color.white)
+        .background(Color(.systemBackground).onTapGesture {
+            withAnimation { hideKeyboard() }
+        })
         .cornerRadius(20, corners: [.topLeft, .topRight])
         .shadow(radius: 20)
+
     }
 }
