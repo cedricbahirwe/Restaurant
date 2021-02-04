@@ -94,6 +94,7 @@ struct RedButton: View {
         self.height = height
     }
     var body: some View {
+        
         Button(action: action, label: {
             Text(title)
                 .font(.poppins(.Medium, size: 14))
@@ -105,3 +106,4 @@ struct RedButton: View {
         })
     }
 }
+

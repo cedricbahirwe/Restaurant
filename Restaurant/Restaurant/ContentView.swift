@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+let size = UIScreen.main.bounds.size
+
 struct ContentView: View {
     @State var selectedTab: TabItem = TabItem.tabs.first!
     @EnvironmentObject var localAuth:LocalAuthentication

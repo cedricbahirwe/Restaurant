@@ -89,7 +89,6 @@ struct ProfileView: View {
                                         .frame(width: 22, height: 22)
                                     Text(option.title)
                                         .font(.poppins(.Regular, size: 18))
-                                        .foregroundColor(.black)
                                         .opacity(0.8)
                                 }
                                 if options.last!.id != option.id {
@@ -119,7 +118,7 @@ struct ProfileView: View {
             .padding(10)
             .whiteBackground()
             
-            SheetView(showCard: $showSheet){
+            SheetView(showCard: $showSheet, height: 300){
                 EditAccountView()
             }
         }

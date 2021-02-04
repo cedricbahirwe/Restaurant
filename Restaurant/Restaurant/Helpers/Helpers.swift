@@ -24,7 +24,7 @@ struct RoundedCorner: Shape {
 struct SheetView<Content: View> : View {
     
     @Binding var showCard: Bool
-
+    var height: CGFloat = 360
     var content: () -> Content
     @State private var show = false
     @State private var viewState  = CGSize.zero
@@ -34,7 +34,7 @@ struct SheetView<Content: View> : View {
     var body: some View {
         content()
             .zIndex(1000)
-            .offset(y: showCard ? 360 : 1000)
+            .offset(y: showCard ? height : 1000)
             .blur(radius: show ? 20 : 0)
             .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
             .offset(y: self.bottomState.height)
