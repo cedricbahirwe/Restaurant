@@ -20,7 +20,7 @@ struct OffersView: View {
                         .foregroundColor(selectedHeader == 0 ? .white : .mainColor)
                         .frame(maxWidth: .infinity)
                         .frame(height: 40)
-                        .background(selectedHeader == 0 ? Color.mainColor : Color.white)
+                        .background(selectedHeader == 0 ? Color.mainColor : Color(.systemBackground))
                 })
                 Button(action: {
                     selectedHeader = 1
@@ -29,7 +29,7 @@ struct OffersView: View {
                         .foregroundColor(selectedHeader == 1 ? .white : .mainColor)
                         .frame(maxWidth: .infinity)
                         .frame(height: 40)
-                        .background(selectedHeader == 1 ? Color.mainColor : Color.white)
+                        .background(selectedHeader == 1 ? Color.mainColor : Color(.systemBackground))
                 })
             }
             .font(.poppins(.Medium, size: 14))
@@ -47,11 +47,8 @@ struct OffersView: View {
             } else {
                 PromoView()
             }
-            Spacer()
         }
-        .padding(.bottom, 80)
         .whiteBackground()
-        .colorScheme(.light)
     }
 }
 

@@ -21,7 +21,7 @@ struct HomeScreen: View {
                             .rotationEffect(.radians(.pi))
                             .background(Color(.systemBackground))
                             .cornerRadius(5)
-                            .shadow(color: Color.offWhite, radius: 4)
+                            .shadow(color: Color.offWhite, radius: 2)
                         HStack(spacing: 5) {
                             TextField("Search for meals or area", text: .constant(""))
                                 .padding(.leading, 10)
@@ -34,7 +34,7 @@ struct HomeScreen: View {
                         .frame(height: 40)
                         .background(Color(.systemBackground))
                         .cornerRadius(5)
-                        .shadow(color: Color.offWhite, radius: 4)
+                        .shadow(color: Color.offWhite, radius: 2)
                     }.padding(.horizontal)
                     
                     // Top Categories
@@ -47,14 +47,13 @@ struct HomeScreen: View {
                 
                 // NearBy Deals
                 NearbyDealsView()
-                
-                Spacer()
-                
+                                
             }
+            .padding(.bottom, 85)
+            
         }
-        .padding(.bottom, 80)
         .whiteBackground()
-
+        
     }
 }
 
@@ -68,7 +67,7 @@ struct HomeScreen_Previews: PreviewProvider {
 
 struct TopCategoriesView: View {
     @State private var goToDetails = false
-
+    
     var body: some View {
         VStack(spacing: 10) {
             
@@ -77,7 +76,7 @@ struct TopCategoriesView: View {
                     .font(.poppins(.Bold, size: 20))
                 Spacer()
                 NavigationLink(destination: RestaurantDetails(), isActive: $goToDetails) { }
-
+                
                 Button(action: {}, label: {
                     Image("filter")
                         .resizable()

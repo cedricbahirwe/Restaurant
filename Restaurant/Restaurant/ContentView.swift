@@ -33,7 +33,6 @@ struct ContentView: View {
                             ProfileView()
                         }
                         TabBar(selectedTab: $selectedTab)
-                        
                     }
                 }
             }
@@ -46,6 +45,7 @@ struct ContentView: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
         }
+
     }
 }
 
