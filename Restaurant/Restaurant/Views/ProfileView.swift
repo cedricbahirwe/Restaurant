@@ -7,7 +7,11 @@
 
 import SwiftUI
 
-struct ProfileOption: Identifiable {
+struct ProfileOption: Identifiable, Equatable {
+//    static func == (lhs: ProfileOption, rhs: ProfileOption) -> Bool {
+//        lhs.title == rhs.title
+//    }
+    
     var id = UUID()
     var title: String
     var image: Image
@@ -22,7 +26,13 @@ struct ProfileView: View {
         .init(title: "Help", image: .init(systemName: "questionmark.circle")),
         .init(title: "Logout", image: .init(systemName: "arrow.right.square"))
     ]
+    
+    @State private var goToOrders = false
+    @State private var goToManageAdress = false
+    @State private var goToFavouritess = false
+    
     var body: some View {
+        
         VStack(alignment: .leading) {
             // Top Header
             VStack(alignment: .leading) {
@@ -48,6 +58,17 @@ struct ProfileView: View {
                 .foregroundColor(.mainGray)
             }.padding(.horizontal, 6)
             
+            Group {
+                NavigationLink(
+                    destination: AddressesView(),
+                    isActive: $goToManageAdress) { }
+                
+                NavigationLink(
+                    destination: MyOrdersView(),
+                    isActive: $goToOrders) { }
+                
+            }
+            
             // Profile Options
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {
@@ -70,6 +91,14 @@ struct ProfileView: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.vertical, 4)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            if option == options[0] {
+                                goToOrders.toggle()
+                            } else if option == options[1] {
+                                goToManageAdress.toggle()
+                            }
+                        }
 
                     }
                     

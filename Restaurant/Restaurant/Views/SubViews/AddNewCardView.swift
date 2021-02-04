@@ -57,20 +57,10 @@ struct AddNewCardView: View {
                             RoundedRectangle(cornerRadius: 3)
                                 .strokeBorder(Color.mainGray, lineWidth: 0.5)
                         )
-                    
                 }
                 
-                
-                Button(action: {}, label: {
-                    Text("PROCEED")
-                        .font(.poppins(.Medium, size: 14))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: .infinity)
-                        .frame(height: 38)
-                        .background(Color.mainColor)
-                        .cornerRadius(5)
-                })
-                .padding(.vertical)
+                RedButton(title: "PROCEED")
+                    .padding(.vertical)
                 
             }
             .font(.poppins(.Light, size: 13))
@@ -80,7 +70,6 @@ struct AddNewCardView: View {
                 Color.white.cornerRadius(15, corners: [.bottomLeft, .bottomRight])
                     .edgesIgnoringSafeArea(.top)
             )
-            
             
             Spacer()
         }
@@ -92,5 +81,27 @@ struct AddNewCardView: View {
 struct AddNewCardView_Previews: PreviewProvider {
     static var previews: some View {
         AddNewCardView()
+    }
+}
+
+struct RedButton: View {
+    let title: String
+    let action: (() -> ())
+    let height: CGFloat
+    init(title: String, _ height: CGFloat =  38, _ action: @escaping (()-> ()) = { }) {
+        self.title = title
+        self.action = action
+        self.height = height
+    }
+    var body: some View {
+        Button(action: action, label: {
+            Text(title)
+                .font(.poppins(.Medium, size: 14))
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: height)
+                .background(Color.mainColor)
+                .cornerRadius(3)
+        })
     }
 }
