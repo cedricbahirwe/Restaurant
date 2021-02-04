@@ -9,9 +9,20 @@ import SwiftUI
 
 struct SplashScreen: View {
     var body: some View {
-            Image("SplashScreen")
-                .resizable()
+        ZStack {
+            Color.mainColor
                 .edgesIgnoringSafeArea(.all)
+
+            Image("SplashScreen")
+                    .resizable()
+                .aspectRatio(contentMode: .fit)
+            VStack {
+                Spacer()
+                Image("cedric-code")
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
+            }
+        }
     }
 }
 

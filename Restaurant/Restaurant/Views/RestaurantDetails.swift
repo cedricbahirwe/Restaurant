@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RestaurantDetails: View {
+    @State private var showSheet = false
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         ZStack {
@@ -31,7 +32,7 @@ struct RestaurantDetails: View {
                                     .frame(width: 10, height: 10)
                                     .foregroundColor(.mainGray)
                                     .padding()
-                                    .background(Color.white.opacity(9))
+                                    .background(Color(.systemBackground).opacity(0.9))
                                     .cornerRadius(5)
                                 
                             })
@@ -44,7 +45,7 @@ struct RestaurantDetails: View {
                                     .frame(width: 20, height: 20)
                                     .foregroundColor(.mainGray)
                                     .padding(12)
-                                    .background(Color.white.opacity(0.9))
+                                    .background(Color(.systemBackground).opacity(0.9))
                                     .cornerRadius(5)
                             })
                             
@@ -57,7 +58,7 @@ struct RestaurantDetails: View {
                     HStack {
                         ForEach(1..<5) { index in
                             Circle()
-                                .fill(index == 1 ? Color.mainColor : Color.white)
+                                .fill(index == 1 ? Color.mainColor : Color.background)
                                 .frame(width: 10, height: 10)
                         }
                     }
@@ -106,7 +107,7 @@ struct RestaurantDetails: View {
                         .padding(.top, 10)
                     }
                     .padding()
-                    .background(Color.white)
+                    .background(Color(.systemBackground))
                     .cornerRadius(5)
                     .shadow(color: Color.offWhite, radius: 5)
                     .padding(.horizontal)
@@ -177,6 +178,7 @@ struct RestaurantDetails: View {
                                 .foregroundColor(.gray)
                         }
                         Spacer()
+                    
                         Button(action: {}, label: {
                             Text("CHECKOUT")
                                 .font(.poppins(.SemiBold, size: 14))
@@ -187,20 +189,23 @@ struct RestaurantDetails: View {
                         })
                     }
                     .padding()
-                    .background(Color.white.cornerRadius(15, corners: [.topLeft, .topRight]).shadow(color: Color.offWhite, radius: 3).edgesIgnoringSafeArea(.bottom))
+                    .background(Color(.systemBackground).cornerRadius(15, corners: [.topLeft, .topRight]).shadow(color: Color.offWhite, radius: 3).edgesIgnoringSafeArea(.bottom))
                 }
                 
             }
             .whiteBackground()
             .edgesIgnoringSafeArea(.top)
-            .colorScheme(.light)
+//            .colorScheme(.light)
             .navigationBarTitle("")
             .navigationBarHidden(true)
             
             
             ZStack {
-                Color.black.opacity(0.6).edgesIgnoringSafeArea(.all)
-                SheetView(showCard: .constant(true))  {
+                if showSheet {
+                    Color.black.opacity(0.6).edgesIgnoringSafeArea(.all)
+                }
+                
+                SheetView(showCard: $showSheet, height: 400)  {
                     CustomizeOrderView()
                 }
             }
