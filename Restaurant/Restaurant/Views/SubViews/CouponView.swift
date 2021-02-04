@@ -22,6 +22,8 @@ struct CouponView: View {
                         )
                     
                 }
+                .font(.poppins(.Light, size: 13))
+
                 RedButton(title: "APPLY NOW!")
             }
             .padding(.horizontal)

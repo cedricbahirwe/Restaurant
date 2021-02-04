@@ -12,7 +12,7 @@ struct HeaderView: View {
     var action: (() -> ())?
     @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        HStack(spacing: 30) {
+        HStack(spacing: 25) {
             Button(action: {
                 if action != nil {
                     action?()

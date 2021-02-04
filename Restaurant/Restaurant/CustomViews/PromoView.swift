@@ -22,7 +22,7 @@ struct PromoView: View {
                 GoogleView()
                 
             }
-            .padding()
+            .padding() 
         }
     }
 }
