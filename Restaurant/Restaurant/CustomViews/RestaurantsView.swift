@@ -296,7 +296,7 @@ struct AllOffersView: View {
                                     , alignment: .topTrailing
                                 )
                                 .padding(3)
-
+                                
                                 
                                 
                             }

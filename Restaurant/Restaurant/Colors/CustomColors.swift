@@ -17,6 +17,11 @@ extension Color {
     static let mainGray = Color.gray
     
     
+    // Neumorphism
+    static let background = Color("background")
+    static let lightShadow = Color("lightShadow")
+    static let darkShadow = Color("darkShadow")
+    
     static let offWhite = Color(red: 225 / 255, green: 225 / 255, blue: 235 / 255)
     static let navyBlue = Color(red: 0, green: 0, blue: 128)
     static let darkBlue = Color(red: 0, green: 0, blue: 139)

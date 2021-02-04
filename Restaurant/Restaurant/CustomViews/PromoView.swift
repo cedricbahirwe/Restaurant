@@ -22,7 +22,8 @@ struct PromoView: View {
                 GoogleView()
                 
             }
-            .padding() 
+            .padding([.top, .horizontal])
+            .padding(.bottom, 85)
         }
     }
 }
@@ -44,39 +45,27 @@ struct PaytmView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 80, height: 30)
                 Spacer()
-                Button(action: {}, label: {
-                    Text("FREEDELPTM")
-                        .foregroundColor(.black)
-                        .font(.poppins(.Regular, size: 16))
-                        .padding(.horizontal)
-                        .padding(.vertical, 10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .strokeBorder(Color.mainColor, style: StrokeStyle(lineWidth: 2, lineCap: .butt, lineJoin: .miter, miterLimit: 0.5, dash: [5], dashPhase: 13))
-                        )
-                })
+                DashedButton("FREEDELPTM")
             }
             
             Text("Get Unlimited free delivery using paytm")
                 .font(.poppins(.SemiBold, size: 14))
             if showPaytmDescription {
                 VStack(spacing: 30) {
-                    Text("use code FREEDELPTM & get free delivery on al orders above USD 1.99")
-                    
-                    Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor eserunt mollit anim id est laborum")
+                    Text("use code FREEDELPTM & get free delivery on al orders above USD 1.99 \n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor eserunt mollit anim id est laborum")
                 }
                 .font(.poppins(.Medium, size: 12))
                 .foregroundColor(.mainGray)
             }
             
             Button(action: {
-                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {                            showPaytmDescription .toggle()
+                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                    showPaytmDescription .toggle()
                 }
             }, label: {
                 Text(showPaytmDescription ? "CLOSE" : "EXPAND")
                     .font(.poppins(.Medium, size: 14))
-                    .foregroundColor(.black)
-                
+                    .foregroundColor(showPaytmDescription ? Color(.label) : .mainColor)
                 Image(systemName: showPaytmDescription ? "chevron.up" : "chevron.down")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -86,9 +75,10 @@ struct PaytmView: View {
             .padding(.bottom, 10)
         }
         .padding(10)
-        .background(Color.white)
+        .background(Color.background)
         .cornerRadius(15)
-        .shadow(color: .offWhite, radius: 3)
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
 }
 
@@ -103,17 +93,8 @@ struct FreechargeView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 120, height: 50)
                 Spacer()
-                Button(action: {}, label: {
-                    Text("FIRSTUSER")
-                        .foregroundColor(.black)
-                        .font(.poppins(.Regular, size: 16))
-                        .padding(.horizontal)
-                        .padding(.vertical, 10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .strokeBorder(Color.mainColor, style: StrokeStyle(lineWidth: 2, lineCap: .butt, lineJoin: .miter, miterLimit: 0.5, dash: [5], dashPhase: 13))
-                        )
-                })
+                DashedButton("FIRSTUSER")
+
             }
             
             Text("Free Delivery for the first time users")
@@ -127,13 +108,13 @@ struct FreechargeView: View {
             }
             
             Button(action: {
-                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {                            showFreechargeDescription.toggle()
+                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                    showFreechargeDescription.toggle()
                 }
             }, label: {
                 Text(showFreechargeDescription ? "CLOSE" : "EXPAND")
                     .font(.poppins(.Medium, size: 14))
-                    .foregroundColor(.black)
-                
+                    .foregroundColor(showFreechargeDescription ? Color(.label) : .mainColor)
                 Image(systemName: showFreechargeDescription ? "chevron.up" : "chevron.down")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -143,9 +124,11 @@ struct FreechargeView: View {
             .padding(.bottom, 10)
         }
         .padding(10)
-        .background(Color.white)
+        
+        .background(Color.background)
         .cornerRadius(15)
-        .shadow(color: .offWhite, radius: 3)
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
 }
 
@@ -160,17 +143,7 @@ struct GoogleView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 25)
                 Spacer()
-                Button(action: {}, label: {
-                    Text("FREEDELPTM")
-                        .foregroundColor(.black)
-                        .font(.poppins(.Regular, size: 16))
-                        .padding(.horizontal)
-                        .padding(.vertical, 10)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 5)
-                                .strokeBorder(Color.mainColor, style: StrokeStyle(lineWidth: 2, lineCap: .butt, lineJoin: .miter, miterLimit: 0.5, dash: [5], dashPhase: 13))
-                        )
-                })
+                DashedButton("DELIVERY")
             }
             
             Text("Free Delivery for the first time users")
@@ -185,13 +158,13 @@ struct GoogleView: View {
             }
             
             Button(action: {
-                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {                            showgGpayDescription.toggle()
+                withAnimation(.spring(response: 0.5, dampingFraction: 0.8, blendDuration: 0.1)) {
+                    showgGpayDescription.toggle()
                 }
             }, label: {
                 Text(showgGpayDescription ? "CLOSE" : "EXPAND")
                     .font(.poppins(.Medium, size: 14))
-                    .foregroundColor(.black)
-                
+                    .foregroundColor(showgGpayDescription ? Color(.label) : .mainColor)
                 Image(systemName: showgGpayDescription ? "chevron.up" : "chevron.down")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -201,8 +174,32 @@ struct GoogleView: View {
             .padding(.bottom, 10)
         }
         .padding(10)
-        .background(Color.white)
+        .background(Color.background)
         .cornerRadius(15)
-        .shadow(color: .offWhite, radius: 3)
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
+    }
+}
+
+struct DashedButton: View {
+    var title: String
+    var action: (() -> ())
+    
+    init(_ title: String, _ action: @escaping (() -> ()) = { }) {
+        self.title = title
+        self.action = action
+    }
+    var body: some View {
+        Button(action: action, label: {
+            Text(title)
+                .foregroundColor(Color(.label))
+                .font(.poppins(.Medium, size: 16))
+                .padding(.horizontal)
+                .padding(.vertical, 10)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .strokeBorder(Color.mainColor, style: StrokeStyle(lineWidth: 2, lineCap: .butt, lineJoin: .miter, miterLimit: 0.5, dash: [5], dashPhase: 13))
+                )
+        })
     }
 }
