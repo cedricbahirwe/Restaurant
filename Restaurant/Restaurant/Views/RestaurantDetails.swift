@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RestaurantDetails: View {
     @State private var showSheet = false
+    @State private var showCheckout = false
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         ZStack {
@@ -65,8 +66,7 @@ struct RestaurantDetails: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("MC Donald's")
-                                .foregroundColor(.black)
-                                .font(.poppins(.SemiBold, size: 18))
+                            .foregroundColor(Color(.label))                                .font(.poppins(.SemiBold, size: 18))
                             Image(systemName: "dot.square")
                             Image(systemName: "dot.square")
                             Spacer()
@@ -90,7 +90,11 @@ struct RestaurantDetails: View {
                             
                             .foregroundColor(.mainGray)
                         }
-                        Button(action: {}, label: {
+                        Button(action: {
+                            withAnimation {
+                                showCheckout.toggle()
+                            }
+                        }, label: {
                             Text("OFFER • 10% OFF ON ALL BEVERAGES")
                                 .font(.poppins(.Medium, size: 12))
                                 .foregroundColor(.mainColor)
@@ -108,8 +112,9 @@ struct RestaurantDetails: View {
                     }
                     .padding()
                     .background(Color(.systemBackground))
-                    .cornerRadius(5)
-                    .shadow(color: Color.offWhite, radius: 5)
+                    .cornerRadius(15)
+                    .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+                    .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
                     .padding(.horizontal)
                 }
                 .padding(.top, -size.height/3/5)
@@ -146,7 +151,7 @@ struct RestaurantDetails: View {
                                                 Text(" -  1  +")
                                                     .font(.poppins(.SemiBold, size: 10))
                                                     .frame(width: 50, height: 20)
-                                                    .background(Color.white)
+                                                    .background(Color.background)
                                                     .cornerRadius(5)
                                                     .foregroundColor(.red)
                                                     .overlay(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.mainColor))
@@ -157,18 +162,26 @@ struct RestaurantDetails: View {
                                                     .background(Color.mainColor)
                                                     .cornerRadius(5)
                                                     .foregroundColor(.white)
+                                                    .onTapGesture {
+                                                        withAnimation {
+                                                            showSheet.toggle()
+                                                        }
+                                                    }
                                             }
                                         }
                                     }
                                 }
                                 .padding(8)
-                                .background(Color.white)
+                                .background(Color(.systemBackground))
                                 .cornerRadius(5)
+                                .shadow(color: .offWhite, radius: 0.5)
                                 .padding(.horizontal)
                             }
                         }
                     }
                     
+                    
+                    SheetView(showCard: $showCheckout, height: 0) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("1 Item  |   15.20 ")
@@ -189,15 +202,15 @@ struct RestaurantDetails: View {
                         })
                     }
                     .padding()
-                    .background(Color(.systemBackground).cornerRadius(15, corners: [.topLeft, .topRight]).shadow(color: Color.offWhite, radius: 3).edgesIgnoringSafeArea(.bottom))
+                    .background(Color(.systemBackground).cornerRadius(15, corners: [.topLeft, .topRight]).shadow(color: Color.offWhite, radius: 3)
+                                    .edgesIgnoringSafeArea(.bottom)
+                    )
+                    }
                 }
                 
             }
             .whiteBackground()
             .edgesIgnoringSafeArea(.top)
-//            .colorScheme(.light)
-            .navigationBarTitle("")
-            .navigationBarHidden(true)
             
             
             ZStack {
@@ -210,6 +223,8 @@ struct RestaurantDetails: View {
                 }
             }
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
         
         
     }

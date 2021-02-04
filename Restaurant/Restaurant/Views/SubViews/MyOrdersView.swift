@@ -13,6 +13,7 @@ struct MyOrdersView: View {
             // Header View
             HeaderView(title: "My Orders")
                 .padding(.leading)
+            
             ScrollView(showsIndicators: false) {
                 VStack {
                     ForEach(0..<3, id: \.self) { i in
@@ -21,17 +22,14 @@ struct MyOrdersView: View {
                 }
             }
             
-            Spacer()
         }
-        
-        //        .whiteBackground()
-        .colorScheme(.light)
     }
 }
 
 struct MyOrdersView_Previews: PreviewProvider {
     static var previews: some View {
         MyOrdersView()
+//            .environment(\.colorScheme, .dark)
     }
 }
 
@@ -44,8 +42,6 @@ struct OrderRowView: View {
                 Spacer()
                 Text("€27.20")
                     .font(.poppins(.Medium, size: 12))
-                
-                
             }
             
             Text("Bodakdev")

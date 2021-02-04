@@ -62,8 +62,11 @@ struct ProfileView: View {
                     .minimumScaleFactor(0.7)
                     .font(.poppins(.Medium, size: 16))
                     .foregroundColor(.mainGray)
-                }.padding(.horizontal, 6)
-                
+                }
+                .padding(.horizontal, 6)
+                .padding(10)
+                .background(Color(.systemBackground).edgesIgnoringSafeArea(.top))
+
                 Group {
                     NavigationLink(
                         destination: AddressesView(),
@@ -74,6 +77,7 @@ struct ProfileView: View {
                         isActive: $goToOrders) { }
                     
                 }
+                
                 
                 // Profile Options
                 ScrollView(showsIndicators: false) {
@@ -104,16 +108,17 @@ struct ProfileView: View {
                                     goToManageAdress.toggle()
                                 }
                             }
-
                         }
                         
                     }
                     .foregroundColor(.mainGray)
                     .padding()
                 }
+                .frame(height: 60*CGFloat(options.count))
+                .background(Color(.systemBackground).edgesIgnoringSafeArea(.top))
+                .cornerRadius(15, corners: [.bottomLeft, .bottomRight])
                 Spacer()
             }
-            .padding(10)
             .whiteBackground()
             
             SheetView(showCard: $showSheet.observeKeyboard){
