@@ -182,7 +182,6 @@ struct EditAccountView: View {
                 .padding(.vertical, 8)
             Spacer(minLength: 0)
         }
-//        .keyboardAdaptive()
         .padding(.top)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)

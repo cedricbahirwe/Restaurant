@@ -66,7 +66,7 @@ struct RestaurantDetails: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("MC Donald's")
-                            .foregroundColor(Color(.label))                                .font(.poppins(.SemiBold, size: 18))
+                                .foregroundColor(Color(.label))                                .font(.poppins(.SemiBold, size: 18))
                             Image(systemName: "dot.square")
                             Image(systemName: "dot.square")
                             Spacer()
@@ -118,7 +118,7 @@ struct RestaurantDetails: View {
                     .padding(.horizontal)
                 }
                 .padding(.top, -size.height/3/5)
-
+                
                 
                 ZStack(alignment: .bottom) {
                     ScrollView(showsIndicators: false) {
@@ -182,29 +182,29 @@ struct RestaurantDetails: View {
                     
                     
                     SheetView(showCard: $showCheckout, height: 0) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("1 Item  |   15.20 ")
-                                .font(.poppins(.SemiBold, size: 18))
-                            Text("Extra charges may apply")
-                                .font(.poppins(.Medium))
-                                .foregroundColor(.gray)
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("1 Item  |   15.20 ")
+                                    .font(.poppins(.SemiBold, size: 18))
+                                Text("Extra charges may apply")
+                                    .font(.poppins(.Medium))
+                                    .foregroundColor(.gray)
+                            }
+                            Spacer()
+                            
+                            Button(action: {}, label: {
+                                Text("CHECKOUT")
+                                    .font(.poppins(.SemiBold, size: 14))
+                                    .foregroundColor(.white)
+                                    .frame(width: 140, height: 40)
+                                    .background(Color.mainColor)
+                                    .cornerRadius(5)
+                            })
                         }
-                        Spacer()
-                    
-                        Button(action: {}, label: {
-                            Text("CHECKOUT")
-                                .font(.poppins(.SemiBold, size: 14))
-                                .foregroundColor(.white)
-                                .frame(width: 140, height: 40)
-                                .background(Color.mainColor)
-                                .cornerRadius(5)
-                        })
-                    }
-                    .padding()
-                    .background(Color(.systemBackground).cornerRadius(15, corners: [.topLeft, .topRight]).shadow(color: Color.offWhite, radius: 3)
-                                    .edgesIgnoringSafeArea(.bottom)
-                    )
+                        .padding()
+                        .background(Color(.systemBackground).cornerRadius(15, corners: [.topLeft, .topRight]).shadow(color: Color.offWhite, radius: 3)
+                                        .edgesIgnoringSafeArea(.bottom)
+                        )
                     }
                 }
                 
