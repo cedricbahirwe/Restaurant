@@ -185,7 +185,7 @@ struct EditAccountView: View {
             withAnimation { hideKeyboard() }
         })
         .cornerRadius(20, corners: [.topLeft, .topRight])
-        .shadow(radius: 20)
-
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
 }

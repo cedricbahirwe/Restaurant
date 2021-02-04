@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CartView: View {
     
-    @State private var showSheet = false
+    @State private var showSheet = true
     
     var body: some View {
         ZStack {
@@ -199,26 +199,31 @@ struct CartView: View {
                             
                         }
                         .padding()
+                        .padding(.bottom, 85)
                         .background(Color(.systemBackground))
                         .cornerRadius(15)
                     }
-                    
+                    //                    .padding(.bottom, 85)
                 }
             }
             .whiteBackground()
-            .colorScheme(.light)
-            SheetView(showCard: $showSheet.observeKeyboard, height: 370) {
+            SheetView(showCard: $showSheet.observeKeyboard, height: 340) {
                 QuickAccountView()
             }
             
         }
-
+        
     }
 }
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {
-        CartView()
+        Group {
+            CartView()
+                .environment(\.colorScheme, .dark)
+            CartView()
+                .environment(\.colorScheme, .light)
+        }
     }
 }
 
@@ -243,7 +248,7 @@ struct QuickAccountView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 15)
                             .foregroundColor(.mainColor)
-
+                        
                         Text("+243")
                     }
                     .font(.poppins(.Medium, size: 14))
@@ -280,7 +285,8 @@ struct QuickAccountView: View {
             }
         })
         .cornerRadius(20)
-        .shadow(radius: 20)
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
 }
 

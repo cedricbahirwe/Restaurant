@@ -52,6 +52,9 @@ struct CustomizeOrderView: View {
         }
         .background(Color(.systemBackground))
         .cornerRadius(15, corners:  [.topLeft, .topRight])
+        
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
 
     }
 }

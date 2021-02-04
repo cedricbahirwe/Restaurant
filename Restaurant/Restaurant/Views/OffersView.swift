@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OffersView: View {
-    @State private var selectedHeader: Int = 1
+    @State private var selectedHeader: Int = 0
     var body: some View {
         VStack {
             // Header Menu Switch
