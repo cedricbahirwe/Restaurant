@@ -208,7 +208,7 @@ struct CartView: View {
             .padding(.bottom, 80)
             .whiteBackground()
             .colorScheme(.light)
-            SheetView(showCard: $showSheet.observeKeyboard, height: 400) {
+            SheetView(showCard: $showSheet.observeKeyboard, height: 370) {
                 QuickAccountView()
             }
             
