@@ -72,6 +72,8 @@ struct AddressesView: View {
             
         }
         .padding()
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 

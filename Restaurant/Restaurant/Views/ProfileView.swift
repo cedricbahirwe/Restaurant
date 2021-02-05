@@ -28,7 +28,7 @@ struct ProfileView: View {
     
     @State private var goToOrders = false
     @State private var goToManageAdress = false
-    @State private var goToFavouritess = false
+    @State private var goToPayment = false
     
     @State private var showSheet = false
     
@@ -75,6 +75,9 @@ struct ProfileView: View {
                     NavigationLink(
                         destination: MyOrdersView(),
                         isActive: $goToOrders) { }
+                    NavigationLink(
+                        destination: PaymentMethodView(),
+                        isActive: $goToPayment) { }
                     
                 }
                 
@@ -106,6 +109,8 @@ struct ProfileView: View {
                                     goToOrders.toggle()
                                 } else if option == options[1] {
                                     goToManageAdress.toggle()
+                                } else if option == options[2] {
+                                    goToPayment.toggle()
                                 }
                             }
                         }

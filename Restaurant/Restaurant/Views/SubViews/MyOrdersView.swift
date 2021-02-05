@@ -23,6 +23,8 @@ struct MyOrdersView: View {
             }
             
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
