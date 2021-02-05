@@ -19,7 +19,16 @@ struct Bank: Identifiable, Equatable {
     var image: String
     var name: String
 }
+
+struct CreditCard: Identifiable {
+    var id = UUID()
+    var image: String
+    var number: String
+    var isDefault: Bool = false
+    
+}
 struct PaymentMethodView: View {
+    
     var body: some View {
         VStack (spacing: 0){
             HeaderView(title: "Payment Options", subtitle: "1 item(s), To pay: €27.27")
@@ -34,32 +43,7 @@ struct PaymentMethodView: View {
                     
                     
                     // Cards View
-                    VStack(alignment: .leading) {
-                        Text("Credit/Debit Cards")
-                            .font(.poppins(.SemiBold, size: 20))
-                        HStack {
-                            Button(action: {}, label: {
-                                Text("ADD NEW CARD")
-                                    .foregroundColor(Color(.label))
-                                    .font(.poppins(.Light, size: 14))
-                            })
-                            Spacer()
-                            Image("visa-logo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 28)
-                                .contrast(0.1)
-                            Image("mastercard-logo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 40, height: 30)
-                                .contrast(0.2)
-                            
-                        }
-                    }
-                    .padding()
-                    .background(Color(.systemBackground))
-                    .cornerRadius(15)
+                    CreditDebitCardsView()
                     
                     // Net banking
                     NetBankingView()
@@ -80,7 +64,7 @@ struct PaymentMethodView: View {
 struct PaymentMethodView_Previews: PreviewProvider {
     static var previews: some View {
         PaymentMethodView()
-        //            .environment(\.colorScheme, .dark)
+            .environment(\.colorScheme, .dark)
         
     }
 }
@@ -189,7 +173,7 @@ struct NetBankingView: View {
 
 struct PayOnDeliveryView: View {
     @State private var cashOnly = false
-
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text("Pay on Delivery")
@@ -210,6 +194,84 @@ struct PayOnDeliveryView: View {
                             cashOnly.toggle()
                         }
                     }
+                
+            }
+        }
+        .padding()
+        .background(Color(.systemBackground))
+        .cornerRadius(15)
+    }
+}
+
+
+
+extension View {
+    func applyRedaction() -> some View {
+        return Group {
+            if #available(iOS 14.0, *) {
+                self.redacted(reason: .placeholder)
+            } else {
+                self
+                // Fallback on earlier versions
+            }
+        }
+        
+    }
+}
+
+struct CreditDebitCardsView: View {
+    @State private var creditCards: [CreditCard] = [
+        .init(image: "mastercard-logo", number: "2001-XXXX-XXXX-A020"),
+        .init(image: "mastercard-logo", number: "1020-XXXX-XXXX-A010", isDefault: true)
+    ]
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("Credit/Debit Cards")
+                .font(.poppins(.SemiBold, size: 20))
+            VStack(spacing: 2) {
+                ForEach(creditCards) { creditCard in
+                    
+                    HStack {
+                        Image("mastercard-logo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 30)
+                        Text(creditCard.number)
+                            .font(.poppins(.Light, size: 14))
+                        Spacer()
+                        
+                        Image(systemName: creditCard.isDefault ? "largecircle.fill.circle" : "circle")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.mainColor)
+                            .onTapGesture {
+                                if !creditCard.isDefault {
+                                    
+                                    creditCards = creditCards.map { CreditCard(image: $0.image, number: $0.number, isDefault: creditCard.id == $0.id ? true : false)}
+                                }
+                            }
+                    }
+                    Divider()
+                }
+            }
+            
+            HStack {
+                Button(action: {}, label: {
+                    Text("ADD NEW CARD")
+                        .foregroundColor(Color(.label))
+                        .font(.poppins(.Light, size: 14))
+                })
+                Spacer()
+                Image("visa-logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 35, height: 28, alignment: .trailing)
+                    .contrast(0.1)
+                Image("mastercard-logo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 30, alignment: .trailing)
+                    .contrast(0.2)
                 
             }
         }
