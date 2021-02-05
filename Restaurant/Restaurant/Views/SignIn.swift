@@ -95,7 +95,7 @@ struct SignIn: View {
                     
                     Button(action: {}, label: {
                         Text("Forgot Password?")
-                            .foregroundColor(.black)
+                            .foregroundColor(Color(.label))
                             .font(.poppins(.Bold, size: 16))
                             
                     })
@@ -186,5 +186,6 @@ struct SignIn: View {
 struct SignIn_Previews: PreviewProvider {
     static var previews: some View {
         SignIn()
+//            .environment(\.colorScheme, .dark)
     }
 }

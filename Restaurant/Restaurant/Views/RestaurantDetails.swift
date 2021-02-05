@@ -66,7 +66,8 @@ struct RestaurantDetails: View {
                     VStack(alignment: .leading) {
                         HStack {
                             Text("MC Donald's")
-                                .foregroundColor(Color(.label))                                .font(.poppins(.SemiBold, size: 18))
+                                .foregroundColor(Color(.label))
+                                .font(.poppins(.SemiBold, size: 18))
                             Image(systemName: "dot.square")
                             Image(systemName: "dot.square")
                             Spacer()
@@ -151,7 +152,7 @@ struct RestaurantDetails: View {
                                                 Text(" -  1  +")
                                                     .font(.poppins(.SemiBold, size: 10))
                                                     .frame(width: 50, height: 20)
-                                                    .background(Color.background)
+                                                    .background(Color(.systemBackground))
                                                     .cornerRadius(5)
                                                     .foregroundColor(.red)
                                                     .overlay(RoundedRectangle(cornerRadius: 5).strokeBorder(Color.mainColor))
@@ -233,7 +234,7 @@ struct RestaurantDetails: View {
 struct RestaurantDetails_Previews: PreviewProvider {
     static var previews: some View {
         RestaurantDetails()
-            .environment(\.colorScheme, .dark)
+//            .environment(\.colorScheme, .dark)
         
     }
 }

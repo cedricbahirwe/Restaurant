@@ -33,8 +33,14 @@ struct ContentView: View {
                             ProfileView()
                         }
                         TabBar(selectedTab: $selectedTab)
+                            .onTapGesture {
+                                localAuth.hasEvaluated  = false
+                            }
                     }
                 }
+            }
+            .onDisappear {
+//                localAuth.hasEvaluated = false
             }
             .alert(isPresented: $localAuth.authError.error) {
                 Alert(title: Text("Sorry!!!"), message: Text(localAuth.authError.message), dismissButton: .default(Text("Continue"), action: {

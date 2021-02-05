@@ -11,18 +11,20 @@ import SwiftUI
 
 class LocalAuthentication: ObservableObject {
     
-    @Published var hasEvaluated = true
+    @Published var hasEvaluated = false
     @Published var authError: (error: Bool, message: String) = (false, "")
     
     func authenticateUser() {
         if !hasEvaluated {
+            print("authenticateUser")
+
             let context = LAContext()
             var error: NSError?
-            
             if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
                 let reason = "Identify yourself to get In"
+                print("SSS")
                 
-                context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) {
+                context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) {
                     [unowned self] success, authenticationError in
                     
                     DispatchQueue.main.async {
@@ -30,6 +32,11 @@ class LocalAuthentication: ObservableObject {
                             self.hasEvaluated = true
                         } else {
                             hasEvaluated = false
+                            
+                            switch authenticationError {
+                            case .none: print("Ssss")
+                            case .some(let error): print("Cascas \(error.localizedDescription)")
+                            }
                             authError = (true, "Authentication failed")
                         }
                     }
