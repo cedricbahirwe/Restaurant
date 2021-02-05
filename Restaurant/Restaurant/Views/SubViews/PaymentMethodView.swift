@@ -7,26 +7,7 @@
 
 import SwiftUI
 
-struct Wallet: Identifiable {
-    var id = UUID()
-    var image: String
-    var name: String
-    var balance: Double = 0.0
-}
 
-struct Bank: Identifiable, Equatable {
-    var id = UUID()
-    var image: String
-    var name: String
-}
-
-struct CreditCard: Identifiable {
-    var id = UUID()
-    var image: String
-    var number: String
-    var isDefault: Bool = false
-    
-}
 struct PaymentMethodView: View {
     
     var body: some View {

@@ -6,25 +6,10 @@
 //
 
 import SwiftUI
-struct ProfileOption: Identifiable, Equatable {
-//    static func == (lhs: ProfileOption, rhs: ProfileOption) -> Bool {
-//        lhs.title == rhs.title
-//    }
-    
-    var id = UUID()
-    var title: String
-    var image: Image
-    
-}
+
+
 struct ProfileView: View {
-    private let options: [ProfileOption] = [
-        .init(title: "My Orders", image: .init(systemName: "list.bullet")),
-        .init(title: "Manage Addresses", image: .init(systemName: "house")),
-        .init(title: "Payments", image: .init(systemName: "creditcard")),
-        .init(title: "Favourites", image: .init(systemName: "suit.heart")),
-        .init(title: "Help", image: .init(systemName: "questionmark.circle")),
-        .init(title: "Logout", image: .init(systemName: "arrow.right.square"))
-    ]
+    
     
     @State private var goToOrders = false
     @State private var goToManageAdress = false
@@ -85,7 +70,7 @@ struct ProfileView: View {
                 // Profile Options
                 ScrollView(showsIndicators: false) {
                     VStack(alignment: .leading) {
-                        ForEach(options) { option in
+                        ForEach(ProfileOption.options) { option in
                             VStack(alignment: .leading) {
                                 HStack(spacing: 16) {
                                     option.image
@@ -96,7 +81,7 @@ struct ProfileView: View {
                                         .font(.poppins(.Regular, size: 18))
                                         .opacity(0.8)
                                 }
-                                if options.last!.id != option.id {
+                                if ProfileOption.options.last!.id != option.id {
                                     Divider()
                                 }
 
@@ -105,11 +90,11 @@ struct ProfileView: View {
                             .padding(.vertical, 4)
                             .contentShape(Rectangle())
                             .onTapGesture {
-                                if option == options[0] {
+                                if option == ProfileOption.options[0] {
                                     goToOrders.toggle()
-                                } else if option == options[1] {
+                                } else if option == ProfileOption.options[1] {
                                     goToManageAdress.toggle()
-                                } else if option == options[2] {
+                                } else if option == ProfileOption.options[2] {
                                     goToPayment.toggle()
                                 }
                             }
@@ -119,7 +104,7 @@ struct ProfileView: View {
                     .foregroundColor(.mainGray)
                     .padding()
                 }
-                .frame(height: 60*CGFloat(options.count))
+                .frame(height: 60*CGFloat(ProfileOption.options.count))
                 .background(Color(.systemBackground).edgesIgnoringSafeArea(.top))
                 .cornerRadius(15, corners: [.bottomLeft, .bottomRight])
                 Spacer()

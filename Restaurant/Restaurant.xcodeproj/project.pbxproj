@@ -12,6 +12,9 @@
 		826994F325AF4CAD00D8104B /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826994F225AF4CAD00D8104B /* HomeScreen.swift */; };
 		826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826994F825AF4CD100D8104B /* ViewExtensions.swift */; };
 		826BBC5425CC366A003B7FBB /* FoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826BBC5325CC366A003B7FBB /* FoodModel.swift */; };
+		826FA94F25CD3E0E0030B7CC /* PaymentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826FA94E25CD3E0E0030B7CC /* PaymentModels.swift */; };
+		826FA95D25CD3E560030B7CC /* ProfileOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826FA95C25CD3E560030B7CC /* ProfileOptionModel.swift */; };
+		826FA96525CD3E690030B7CC /* TabBarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 826FA96425CD3E690030B7CC /* TabBarModel.swift */; };
 		8271330425C89C1200D2AB40 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8271330325C89C1200D2AB40 /* MyOrdersView.swift */; };
 		8271330925C89F9F00D2AB40 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8271330825C89F9F00D2AB40 /* SearchView.swift */; };
 		8271330E25C8A37700D2AB40 /* PMethodAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8271330D25C8A37700D2AB40 /* PMethodAlert.swift */; };
@@ -85,6 +88,9 @@
 		826994F225AF4CAD00D8104B /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		826994F825AF4CD100D8104B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		826BBC5325CC366A003B7FBB /* FoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodModel.swift; sourceTree = "<group>"; };
+		826FA94E25CD3E0E0030B7CC /* PaymentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentModels.swift; sourceTree = "<group>"; };
+		826FA95C25CD3E560030B7CC /* ProfileOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileOptionModel.swift; sourceTree = "<group>"; };
+		826FA96425CD3E690030B7CC /* TabBarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModel.swift; sourceTree = "<group>"; };
 		8271330325C89C1200D2AB40 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
 		8271330825C89F9F00D2AB40 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8271330D25C8A37700D2AB40 /* PMethodAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PMethodAlert.swift; sourceTree = "<group>"; };
@@ -178,6 +184,9 @@
 			isa = PBXGroup;
 			children = (
 				826BBC5325CC366A003B7FBB /* FoodModel.swift */,
+				826FA94E25CD3E0E0030B7CC /* PaymentModels.swift */,
+				826FA95C25CD3E560030B7CC /* ProfileOptionModel.swift */,
+				826FA96425CD3E690030B7CC /* TabBarModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -483,8 +492,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				826FA96525CD3E690030B7CC /* TabBarModel.swift in Sources */,
 				8271330925C89F9F00D2AB40 /* SearchView.swift in Sources */,
 				8271331B25C8A85200D2AB40 /* AddressesView.swift in Sources */,
+				826FA94F25CD3E0E0030B7CC /* PaymentModels.swift in Sources */,
 				82584B0B25B6194700064619 /* CartView.swift in Sources */,
 				82ED4C2825CC867A00E3132F /* TestingView.swift in Sources */,
 				8288593025AF47B40000BADB /* SplashScreen.swift in Sources */,
@@ -496,6 +507,7 @@
 				82584B0625B6190700064619 /* RestaurantDetails.swift in Sources */,
 				826BBC5425CC366A003B7FBB /* FoodModel.swift in Sources */,
 				8288595D25AF47E60000BADB /* CustomFonts.swift in Sources */,
+				826FA95D25CD3E560030B7CC /* ProfileOptionModel.swift in Sources */,
 				82FC985725AF92CD0065CC1C /* Helpers.swift in Sources */,
 				826994F925AF4CD100D8104B /* ViewExtensions.swift in Sources */,
 				82D9F6E625B25B860006BED3 /* RestaurantsView.swift in Sources */,
