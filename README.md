@@ -4,15 +4,17 @@
 
 ### Screenshots
 
-Login                      | Explore                   | Restaurants Offers
-:-------------------------:|:-------------------------:|:-------------------------:
-![](shots/1.png)           |  ![](shots/2.png)         | ![](shots/3.png)
+Login                      | Explore
+:-------------------------:|:-------------------------:
+![](shots/1.png)           |  ![](shots/2.png)
 
+Restaurant Options         | Restaurant Menu
+:-------------------------:|:-------------------------:
+![](shots/3.png)           |  ![](shots/4.png)
 
-Restaurant Menu            | Promo Offers              | Cart
-:-------------------------:|:-------------------------:|:-------------------------:
-![](shots/4.png)           |  ![](shots/5.png)         | ![](shots/6.png)
-
+Promo Offers               | Cart
+:-------------------------:|:-------------------------:
+![](shots/5.png)           |  ![](shots/6.png)
 
 Profile                    | Payment Options
 :-------------------------:|:-------------------------:
