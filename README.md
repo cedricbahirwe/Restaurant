@@ -4,7 +4,7 @@
 
 ### Screenshots
 
-Login.                     |  Explore
+Login                      |  Explore
 :-------------------------:|:-------------------------:
 ![](shots/1.png)  |  ![](shots/2.png)
 
@@ -12,6 +12,13 @@ Restaurant Options         |  Restaurant Menu
 :-------------------------:|:-------------------------:
 ![](shots/3.png)  |  ![](shots/4.png)
 
+Promo Offers               |  Cart
+:-------------------------:|:-------------------------:
+![](shots/5.png)  |  ![](shots/6.png)
+
+Profile                    |  Payment Options
+:-------------------------:|:-------------------------:
+![](shots/7.png)  |  ![](shots/8.png)
 
 
 
